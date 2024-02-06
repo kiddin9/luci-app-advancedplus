@@ -24,7 +24,9 @@ ul:depends("qos", true)
 
 -- e = t:option(Flag, "uhttps",translate('Accessing using HTTPS'), translate('Open the address in the background and use HTTPS for secure access'))
 
+if fs.access('/usr/bin/zsh') then
 e = t:option(Flag, "usshmenu",translate('No backend menu required'), translate('OPENWRT backend and SSH login do not display shortcut menus'))
+end
 
 if fs.access('/etc/config/netwizard') then
 e = t:option(Flag, "wizard",translate('Hide Wizard'), translate('Show or hide the setup wizard menu'))
