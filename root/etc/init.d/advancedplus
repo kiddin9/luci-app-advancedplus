@@ -233,8 +233,10 @@ tsoset
     fi
     #cpumode=`uci -q get advancedplus.@basic[0].cpumode`
     #[ ! $cpumode ] || cpumodeset $cpumode   /usr/bin/zsh
+    if [ "$(which zsh)" ]; then
     sed -i "\/bin\/zsh/d" /etc/profile
     [ "x$(uci -q get advancedplus.@basic[0].usshmenu)" = "x1" ] || echo '/usr/bin/zsh'  >> /etc/profile
+    fi
     uci commit netwizard 
 }
 
