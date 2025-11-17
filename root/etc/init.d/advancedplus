@@ -112,7 +112,6 @@ start() {
     [ -f $LOCK ] && exit
     [ "x$XBOOT" = "x1" ] && exit 0
     touch $LOCK
-    advancedset
     rm -rf /tmp/luci-*
     rm -f $LOCK 2>/dev/null
 }
